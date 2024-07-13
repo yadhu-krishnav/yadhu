@@ -1,0 +1,11 @@
+.sidebar a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            background-size: cover;
+        }
+
+        .sidebar a:hover {
+            background-color:rgb(0, 141, 218,0.4);
+        }

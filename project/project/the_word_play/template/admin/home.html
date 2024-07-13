@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+  <head>
+    <title>The Word Play</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel=" icon" type="x-icon" href="{% static 'images/icon.png'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+<!--    <link rel="stylesheet" href="{% static 'css/table_serch.css'%}">-->
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap" >
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+
+    <div class="site-navbar-wrap">
+
+      <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-6 col-lg-3">
+              <h1 class="my-0 site-logo"><a href="#">The Word Play</a></h1>
+            </div>
+            <div class="col-6 col-lg-9">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#" class="site-menu-toggle js-menu-toggle text-black">
+                    <span class="icon-menu h3"></span>
+                  </a></div>
+
+                    <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                    <li><a href="admin_home" class="nav-link">Home</a></li>
+                    <li><a href="admin_book" class="nav-link">Book</a></li>
+                    <li><a href="admin_add_book" class="nav-link">Add Book</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="admin_user_view">User</a>
+                    <a class="dropdown-item" href="admin_employee_view">Employee</a>
+                  </div>
+                </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="../new_order">New Order</a>
+                    <a class="dropdown-item" href="admin_order_history">Order History</a>
+                  </div>
+                </li>
+                    <li>
+                            <a href="#" onclick="confirmBox()" class="nav-link"><i class="bi bi-box-arrow-right"></i></a>
+                </li>
+                    </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- END .site-navbar-wrap -->
+ <!-- Inline CSS -->
+<style>
+  .confirm-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .confirm-box button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .confirm-box button:hover {
+    background-color: #3e8e41;
+  }
+</style>
+
+<!-- Inline JavaScript -->
+<script>
+  function confirmBox() {
+    var confirmBox = document.createElement("div");
+    confirmBox.className = "confirm-box";
+    confirmBox.innerHTML = `
+      <p>Are you sure you want to proceed?</p>
+      <button onclick="closeConfirmBox()">Cancel</button>
+      <a href="../logout_admin"><button >logout</button></a>
+    `;
+    document.body.appendChild(confirmBox);
+  }
+
+  function closeConfirmBox() {
+    var confirmBox = document.querySelector(".confirm-box");
+    confirmBox.parentNode.removeChild(confirmBox);
+  }
+
+  function proceed() {
+    alert("You chose to proceed!");
+    closeConfirmBox();
+  }
+</script>
+
+
+
+    <div class="site-section" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-5">
+            <h2 class="text-white serif text-uppercase mb-4">Books are not just collections of pages; they are portals to worlds unknown, whispers of wisdom, and echoes of imagination. Within the bound covers, the beauty of words transforms into the magic of ideas, inviting minds to dance with the extraordinary</h2>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="site-section1 " >
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <figure class="mb-0 mr-3">-->
+<!--                  <img src="images/person_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid ounded-circle">-->
+<!--              </figure>-->
+              <h3>Fiction</h3>
+              <p>Fiction, rooted in Latin "fictiō," invents imaginary worlds, publicly acknowledged as unreal. Audiences anticipate deviation from reality, embracing author-created narratives. Academics categorize fiction into Literary and genre forms.</p>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <figure class="mb-0 mr-3">-->
+<!--                  <img src="images/person_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid ounded-circle">-->
+<!--              </figure>-->
+              <h3>Non-Fiction</h3>
+              <p>Non-fiction spans diverse writing forms excluding fictional narratives. Authors assert truthfulness, presenting facts or perspectives. Examples include essays, biographies, journalism, and historical or scientific works.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-files-o"></span>-->
+<!--              </span>-->
+              <h3>Novel</h3>
+              <p>The novel, a Fiction genre, is a lengthy, complex prose narrative exploring human experience through connected events, diverse styles, and types. Published as a single book, it conveys philosophical, historical, and cultural perspectives.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-font"></span>-->
+<!--              </span>-->
+              <h3>Romance</h3>
+              <p>"Romance, from 'romanz,' denotes chivalrous love tales. In literature, it signifies stories of heroes, knights, and courtly love, featuring duty, courage, and optimistic endings."</p>
+              </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-photo"></span>-->
+<!--              </span>-->
+              <h3>Biography</h3>
+              <p>Biography, a nonfictional genre, recounts an individual's life from historical or personal perspectives. Drawing on various evidence, it details events chronologically, including childhood, career, relationships, and death. Authors are known as biographers.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Autobiography</h3>
+              <p>Autobiography, a self-written life record, differs from biography by being authored in the first person. Some adopt a fictional narrative, revealing personal experiences for self-discovery, like Charles Dickens' David Copperfield or J.D. Salinger's The Catcher in the Rye.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Mystery</h3>
+              <p>Mystery, rooted in the Latin mysterium, centers on puzzling crimes or situations, fictional or non-fictional, supernatural or not. Often involving "whodunit" scenarios, it's synonymous with detective fiction or broadly encompasses crime tales.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Poetry Books</h3>
+              <p>Poetry, an artistic literary form, emphasizes aesthetics and evocation over literal meaning. It stands alone or blends with other arts, using devices like alliteration, rhythm, and symbolism to elicit emotional responses. Metaphor and simile forge connections, revealing nuanced meanings.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Thrillers</h3>
+              <p>Thrillers feature swift pacing, action, and resourceful heroes countering powerful villains. Suspense, red herrings, and cliffhangers heighten tension. Distinct from mysteries, thrillers center on heroes thwarting enemies, with jeopardy and violent confrontations. Climax involves the hero defeating the villain, ensuring safety.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Spiritual Books</h3>
+              <p>The "religious, inspirational, and spiritual" genre spans both fiction and non-fiction, promoting spiritual growth irrespective of specific religions. Popular themes include techniques for enhancing physical health, emotional well-being, and relationships, drawing from global concepts and practices.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>Cook Books</h3>
+              <p>Cookbooks compile recipes, instructions, and details on food preparation and presentation. Serving as a chronicle and treasury of culinary art, they are authored by individuals, collectives, or anonymously. Targeting diverse audiences, cookbooks cater to home cooks, professional chefs, institutional cooks, or specialized groups.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="service h-100">
+<!--              <span class="wrap-icon">-->
+<!--                <span class="icon-text-height"></span>-->
+<!--              </span>-->
+              <h3>History Books</h3>
+              <p>Historical Fiction plunges readers into the past, emphasizing authenticity through vivid settings and culturally distinct eras. Blending real events with imaginative elements, characters, whether fictional or based on real figures, seamlessly integrate into the historical context. In-depth research guarantees accurate portrayal, allowing authors creative freedom while upholding a captivating and credible narrative.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h3 class="footer-heading mb-4">About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam blanditiis, vero voluptatum distinctio qui. Nostrum quibusdam, dolor unde sunt fugiat.</p>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="col-lg-3 ml-auto">
+
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigation</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Book Author</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#" >Team</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-4 mb-5 mb-lg-0" id="contact-section">
+
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">Quick Contact</h3>
+              <form method="post" class="form-subscribe">
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Name" aria-label="Enter Email" aria-describedby="button-addon2">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter email" aria-label="Enter Email" aria-describedby="button-addon2">
+                </div>
+                <div class="form-group mb-3">
+                  <textarea name="" class="form-control" id="" cols="30" rows="4" placeholder="Your message"></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary px-5" type="submit">Send Message</button>
+                </div>
+              </form>
+
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="mb-4">
+                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                </div>
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+  <script src="{% static 'js/popper.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'js/aos.js'%}"></script>
+  <script src="{% static 'js/jquery.sticky.js'%}"></script>
+  <script src="{% static 'js/stickyfill.min.js'%}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
+
+  <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+  <script src="{% static 'js/main.js'%}"></script>
+
+
+  </body>
+</html>
